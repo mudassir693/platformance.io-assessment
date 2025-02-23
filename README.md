@@ -1,5 +1,7 @@
 # 🚀 Project: Chatbot with Website Data
 
+Demo URL: [https://platformance-io-assessment.vercel.app](https://platformance-io-assessment.vercel.app)
+
 ## Getting Started
 
 First, run the development server:
@@ -46,22 +48,22 @@ const crawlResult = (await app.crawlUrl(url, {
 - Integrates website data into chatbot conversations for more relevant answers.
 
 ```javascript
-await fetch("https://api.together.xyz/v1/chat/completions", {
-  method: "POST",
+await fetch('https://api.together.xyz/v1/chat/completions', {
+  method: 'POST',
   headers: {
     Authorization: `Bearer ${TOGETHER_API_KEY}`,
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
   },
   body: JSON.stringify({
-    model: "Qwen/Qwen2.5-72B-Instruct-Turbo",
+    model: 'Qwen/Qwen2.5-72B-Instruct-Turbo',
     messages: [
       {
-        role: "system",
+        role: 'system',
         content:
-          "You are an AI assistant that uses website data to enhance responses.",
+          'You are an AI assistant that uses website data to enhance responses.',
       },
       {
-        role: "user",
+        role: 'user',
         content: crawledData
           ? `Website data: ${crawledData}\n\nUser query: ${message}`
           : message,
